@@ -1,33 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
-    <div class="container">
+    <div class="container"> </div>
         <h1>To-Do List</h1>
         <div class="task-input">
             <input type="text" id="task-input" placeholder="Add a new task...">
+
+            <label for="deadline">Date limite :</label>
+            <input type="date" id="deadline" name="deadline">
+
+            <label for="category">Catégorie :</label>
+            <select id="category" name="category">
+                <option value="travail">Travail</option>
+                <option value="personnel">Personnel</option>
+            </select>
+
+            <label for="priority">Priorité :</label>
+            <select id="priority" name="priority">
+                <option value="basse">Basse</option>
+                <option value="moyenne">Moyenne</option>
+                <option value="haute">Haute</option>
+            </select>
             <button id="add-task">Add</button>
         </div>
-        <ul id="task-list">
-            <!-- Tasks will be dynamically added here -->
-        </ul>
-    </div>
-    <script src="index.js"></script>
-</body>
-</html>
 
+        <div class="task-filters">
+            <input type="text" id="search" placeholder="Rechercher...">
+            <button onclick="filterTasks()">Rechercher</button>
+            <button onclick="sortTasks('deadline')">Trier par Date</button>
+            <button onclick="sortTasks('priority')">Trier par Priorité</button>
+            <button onclick="showCompletedTasks()">Afficher Complétées</button>
+            <button onclick="showInProgressTasks()">Afficher En Cours</button>
+        </div>
+
+        <ul id="task-list">
+            <!-- Les tâches seront ajoutées ici dynamiquement -->
+        </ul>
+        <div class="task-buttons">
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
